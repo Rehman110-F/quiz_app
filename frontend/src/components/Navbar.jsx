@@ -8,9 +8,7 @@ export default function Navbar() {
     <nav className="bg-white shadow-sm border-b border-gray-100 px-6 py-4">
       <div className="max-w-2xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-violet-600 rounded-xl flex items-center justify-center text-white text-lg">
-            📸
-          </div>
+         <img src="/logo.svg" alt="SnapQuiz" className="w-9 h-9" />
           <div>
             <h1 className="text-lg font-bold text-gray-800 leading-tight">KongoSnap</h1>
             <p className="text-xs text-gray-400">Learn from anything</p>

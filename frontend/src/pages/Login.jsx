@@ -29,8 +29,8 @@ export default function Login() {
       <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 w-full max-w-md">
 
         <div className="text-center mb-8">
-          <div className="text-5xl mb-3">📸</div>
-          <h1 className="text-2xl font-bold text-gray-800">Welcome back!</h1>
+          <img src="/logo.svg" alt="SnapQuiz" className="w-20 h-20 mx-auto mb-3" />
+<h1 className="text-2xl font-bold text-gray-800">Welcome!</h1>
           <p className="text-gray-500 text-sm mt-1">Sign in to continue learning</p>
         </div>
 

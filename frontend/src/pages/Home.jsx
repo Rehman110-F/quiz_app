@@ -179,12 +179,14 @@ export default function Home() {
 
       {/* Hero */}
       <div className="text-center mb-6">
-        <div className="text-5xl mb-3">📸</div>
-        <h2 className="text-2xl font-bold text-gray-800">Snap. Ask. Learn!</h2>
-        <p className="text-gray-500 text-sm mt-1">
-          Take a photo or type any topic to get an instant quiz
-        </p>
-      </div>
+  <div className="flex justify-center mb-3">
+    <img src="/logo.svg" alt="SnapQuiz" className="w-20 h-20" />
+  </div>
+  <h2 className="text-2xl font-bold text-gray-800">Snap. Ask. Learn!</h2>
+  <p className="text-gray-500 text-sm mt-1">
+    Take a photo or type any topic to get an instant quiz
+  </p>
+</div>
 
       {/* Mode toggle */}
       <div className="flex gap-2 mb-6 bg-gray-100 rounded-2xl p-1">

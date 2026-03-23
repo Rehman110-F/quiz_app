@@ -1,0 +1,47 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Outer rounded square background -->
+  <rect x="10" y="10" width="180" height="180" rx="44" fill="#7C3AED"/>
+
+  <!-- Camera body -->
+  <rect x="34" y="72" width="132" height="96" rx="18" fill="white" opacity="0.15"/>
+  <rect x="34" y="72" width="132" height="96" rx="18" fill="none" stroke="white" stroke-width="3"/>
+
+  <!-- Camera top notch -->
+  <rect x="72" y="58" width="56" height="24" rx="10" fill="white" opacity="0.15"/>
+  <rect x="72" y="58" width="56" height="24" rx="10" fill="none" stroke="white" stroke-width="3"/>
+
+  <!-- Flash rectangle -->
+  <rect x="44" y="82" width="20" height="14" rx="5" fill="#FFD23F"/>
+
+  <!-- Lens outer ring -->
+  <circle cx="100" cy="118" r="36" fill="#5B21B6"/>
+
+  <!-- Lens ring 2 -->
+  <circle cx="100" cy="118" r="27" fill="#FFD23F"/>
+
+  <!-- Lens ring 3 dark -->
+  <circle cx="100" cy="118" r="18" fill="#1B1F3B"/>
+
+  <!-- Lens center shine -->
+  <circle cx="93" cy="111" r="5" fill="white" opacity="0.35"/>
+  <circle cx="90" cy="108" r="2.5" fill="white" opacity="0.55"/>
+
+  <!-- Big star top right -->
+  <polygon points="163,18 167,31 181,31 170,39 174,52 163,44 152,52 156,39 145,31 159,31" fill="#FFD23F"/>
+
+  <!-- Small teal star bottom left -->
+  <polygon points="30,148 32,155 40,155 34,160 36,167 30,163 24,167 26,160 20,155 28,155" fill="#06D6A0"/>
+
+  <!-- Small pink circle top left -->
+  <circle cx="28" cy="38" r="7" fill="#F472B6"/>
+
+  <!-- Small orange circle bottom right -->
+  <circle cx="170" cy="168" r="6" fill="#FB923C"/>
+
+  <!-- Tiny white dots scattered -->
+  <circle cx="152" cy="70" r="3" fill="white" opacity="0.4"/>
+  <circle cx="44" cy="158" r="2.5" fill="white" opacity="0.35"/>
+  <circle cx="168" cy="110" r="2" fill="white" opacity="0.3"/>
+
+</svg>
