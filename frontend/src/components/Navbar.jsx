@@ -12,7 +12,7 @@ export default function Navbar() {
             📸
           </div>
           <div>
-            <h1 className="text-lg font-bold text-gray-800 leading-tight">SnapQuiz</h1>
+            <h1 className="text-lg font-bold text-gray-800 leading-tight">KongoSnap</h1>
             <p className="text-xs text-gray-400">Learn from anything</p>
           </div>
         </Link>

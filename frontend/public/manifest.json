@@ -1,6 +1,6 @@
 {
-  "name": "SnapQuiz - Learn from Photos",
-  "short_name": "SnapQuiz",
+  "name": "KongoSnap - Learn from Photos",
+  "short_name": "KongoSnap",
   "description": "Take a photo and get an instant quiz!",
   "start_url": "/",
   "display": "standalone",
