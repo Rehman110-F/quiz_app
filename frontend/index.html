@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <title>KongoSnap</title>
+
+    <script>
+      window.addEventListener('error', (e) => {
+        if (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK') {
+          console.log("Stale assets detected, forcing reload...");
+          // 'true' forces a reload from the server, bypassing the local cache
+          window.location.reload(true);
+        }
+      }, true);
+    </script>
   </head>
   <body>
     <div id="root"></div>
