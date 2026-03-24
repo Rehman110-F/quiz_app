@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import supabase from '../supabase'
 
+const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL
+
 function FeedbackModal({ onClose, userId }) {
-  const [rating, setRating]     = useState(0)
-  const [hovered, setHovered]   = useState(0)
-  const [message, setMessage]   = useState('')
-  const [loading, setLoading]   = useState(false)
+  const [rating, setRating]       = useState(0)
+  const [hovered, setHovered]     = useState(0)
+  const [message, setMessage]     = useState('')
+  const [loading, setLoading]     = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
   async function handleSubmit() {
@@ -43,24 +45,16 @@ function FeedbackModal({ onClose, userId }) {
             <p className="text-gray-500 text-sm mb-6">
               Your feedback helps us make SnapQuiz better for every child.
             </p>
-            <button
-              onClick={onClose}
-              className="w-full py-3 bg-violet-600 text-white font-bold rounded-2xl"
-            >
+            <button onClick={onClose} className="w-full py-3 bg-violet-600 text-white font-bold rounded-2xl">
               Close
             </button>
           </div>
         ) : (
           <>
-            {/* Handle bar */}
             <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-5"/>
-
             <h3 className="text-lg font-bold text-gray-800 mb-1">Share your feedback 💬</h3>
-            <p className="text-sm text-gray-400 mb-5">
-              How is your experience with SnapQuiz?
-            </p>
+            <p className="text-sm text-gray-400 mb-5">How is your experience with SnapQuiz?</p>
 
-            {/* Star rating */}
             <div className="flex justify-center gap-3 mb-5">
               {[1, 2, 3, 4, 5].map(star => (
                 <button
@@ -75,16 +69,14 @@ function FeedbackModal({ onClose, userId }) {
               ))}
             </div>
 
-            {/* Rating label */}
             <p className="text-center text-sm font-semibold text-violet-600 mb-4 h-5">
               {rating === 1 && 'Needs a lot of improvement'}
               {rating === 2 && 'Could be better'}
-              {rating === 3 && 'It\'s okay'}
+              {rating === 3 && "It's okay"}
               {rating === 4 && 'Really enjoying it!'}
               {rating === 5 && 'Absolutely love it! 🚀'}
             </p>
 
-            {/* Message */}
             <textarea
               value={message}
               onChange={e => setMessage(e.target.value)}
@@ -95,12 +87,8 @@ function FeedbackModal({ onClose, userId }) {
             />
             <p className="text-xs text-gray-400 text-right mb-4">{message.length}/500</p>
 
-            {/* Buttons */}
             <div className="flex gap-3">
-              <button
-                onClick={onClose}
-                className="flex-1 py-3 bg-gray-100 text-gray-600 font-bold rounded-2xl"
-              >
+              <button onClick={onClose} className="flex-1 py-3 bg-gray-100 text-gray-600 font-bold rounded-2xl">
                 Cancel
               </button>
               <button
@@ -120,8 +108,8 @@ function FeedbackModal({ onClose, userId }) {
 
 export default function Profile() {
   const { user, profile, signOut, refreshProfile } = useAuth()
-  const [discoveries, setDiscoveries]   = useState([])
-  const [loading, setLoading]           = useState(true)
+  const [discoveries, setDiscoveries] = useState([])
+  const [loading, setLoading]         = useState(true)
   const [showFeedback, setShowFeedback] = useState(false)
   const navigate = useNavigate()
 
@@ -174,8 +162,7 @@ export default function Profile() {
             onClick={handleSignOut}
             className="w-full sm:w-auto text-sm font-bold px-4 py-2.5 rounded-2xl transition-all
               bg-violet-50 text-violet-700 border border-violet-200
-              hover:bg-violet-100 active:bg-violet-200 active:text-violet-900 active:border-violet-300
-              active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+              hover:bg-violet-100 active:bg-violet-200"
           >
             Sign out
           </button>
@@ -184,21 +171,15 @@ export default function Profile() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-3">
           <div className="bg-amber-50 rounded-2xl p-3 text-center">
-            <p className="text-2xl font-bold text-amber-600">
-              {profile?.streak_count || 0}🔥
-            </p>
+            <p className="text-2xl font-bold text-amber-600">{profile?.streak_count || 0}🔥</p>
             <p className="text-xs text-amber-700 font-medium">Day streak</p>
           </div>
           <div className="bg-violet-50 rounded-2xl p-3 text-center">
-            <p className="text-2xl font-bold text-violet-600">
-              {profile?.total_quizzes || 0}
-            </p>
+            <p className="text-2xl font-bold text-violet-600">{profile?.total_quizzes || 0}</p>
             <p className="text-xs text-violet-700 font-medium">Quizzes done</p>
           </div>
           <div className="bg-teal-50 rounded-2xl p-3 text-center">
-            <p className="text-2xl font-bold text-teal-600">
-              {discoveries.length}
-            </p>
+            <p className="text-2xl font-bold text-teal-600">{discoveries.length}</p>
             <p className="text-xs text-teal-700 font-medium">Discoveries</p>
           </div>
         </div>
@@ -251,14 +232,22 @@ export default function Profile() {
                 </p>
               </div>
               <div className="text-right">
-                <p className="font-bold text-violet-600">
-                  {d.score}/{d.total_questions}
-                </p>
+                <p className="font-bold text-violet-600">{d.score}/{d.total_questions}</p>
                 <p className="text-xs text-gray-400">score</p>
               </div>
             </div>
           ))}
         </div>
+      )}
+
+      {/* Admin button — only visible to admin email */}
+      {user?.email === ADMIN_EMAIL && (
+        <button
+          onClick={() => navigate('/admin')}
+          className="w-full mt-6 py-2 text-xs text-gray-300 hover:text-violet-400 transition-all"
+        >
+          🛡️ Admin Panel
+        </button>
       )}
 
       {/* Feedback modal */}

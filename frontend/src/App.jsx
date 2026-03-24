@@ -1,3 +1,5 @@
+import Admin from './pages/Admin'
+import AdminRoute from './components/AdminRoute'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider, useAuth } from './context/AuthContext'
 import Navbar from './components/Navbar'
@@ -18,22 +20,36 @@ function AppRoutes() {
   return (
     <div className="min-h-screen bg-gray-50 pb-16">
       <Navbar />
+      
       <Routes>
+      <Route path="/admin" element={
+     <AdminRoute><Admin /></AdminRoute>
+    } />
         <Route path="/login" element={<Login />} />
+        
         <Route path="/register" element={<Register />} />
+        
         <Route path="/" element={
           <ProtectedRoute><Home /></ProtectedRoute>
         } />
+        
         <Route path="/quiz" element={
           <ProtectedRoute><Quiz /></ProtectedRoute>
         } />
+        
         <Route path="/profile" element={
           <ProtectedRoute><Profile /></ProtectedRoute>
         } />
+        
         <Route path="/parent-dashboard" element={
        <ProtectedRoute><ParentDashboard /></ProtectedRoute>
       }  />
+      
+      
       </Routes>
+      
+      
+      
       <BottomNav />
     </div>
   )

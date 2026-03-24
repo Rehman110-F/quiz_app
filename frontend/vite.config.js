@@ -9,5 +9,15 @@ export default defineConfig({
   ],
   server: {
     host: true
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        // Every build gets unique filenames — browser always loads fresh
+        entryFileNames:  'assets/[name]-[hash].js',
+        chunkFileNames:  'assets/[name]-[hash].js',
+        assetFileNames:  'assets/[name]-[hash].[ext]'
+      }
+    }
   }
 })
