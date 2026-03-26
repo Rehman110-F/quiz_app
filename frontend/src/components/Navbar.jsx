@@ -10,7 +10,7 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-3">
          <img src="/logo.svg" alt="SnapQuiz" className="w-9 h-9" />
           <div>
-            <h1 className="text-lg font-bold text-gray-800 leading-tight">KongooooSnap</h1>
+            <h1 className="text-lg font-bold text-gray-800 leading-tight">KongoSnap</h1>
             <p className="text-xs text-gray-400">Learn from anything</p>
           </div>
         </Link>
