@@ -3,22 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#7c3aed" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-
-    <title>KongoSnap</title>
-
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="SnapQuiz" />
+    <meta name="description" content="Snap a photo or type any topic and get an instant quiz!" />
+    <title>SnapQuiz — Snap. Ask. Learn!</title>
     <script>
-      window.addEventListener('error', (e) => {
-        if (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK') {
-          console.log("Stale assets detected, forcing reload...");
-          // 'true' forces a reload from the server, bypassing the local cache
-          window.location.reload(true);
+      // Unregister any old service workers immediately
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (let registration of registrations) {
+            registration.unregister()
+            console.log('Service worker unregistered')
+          }
+        })
+        // Also clear all caches
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            for (let name of names) {
+              caches.delete(name)
+              console.log('Cache cleared:', name)
+            }
+          })
         }
-      }, true);
+      }
     </script>
   </head>
   <body>
