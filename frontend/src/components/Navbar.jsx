@@ -11,7 +11,7 @@ export default function Navbar() {
          <img src="/logo.svg" alt="SnapQuiz" className="w-9 h-9" />
           <div>
             <h1 className="text-lg font-bold text-gray-800 leading-tight">KongoSnap</h1>
-            <p className="text-xs text-gray-400">Learn from anything.</p>
+            <p className="text-xs text-gray-400">Learn from anything</p>
           </div>
         </Link>
 
