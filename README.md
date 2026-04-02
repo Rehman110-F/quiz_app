@@ -1,6 +1,6 @@
-# 🔍 SnapQuiz — Learn From Anything Around You
+# 🔍 KongoSnap — Learn From Anything Around You
 
-SnapQuiz is an AI-powered web application that turns real-world objects into interactive learning experiences.
+KongoSnap is an AI-powered web application that turns real-world objects into interactive learning experiences.
 
 Simply upload an image, and the app instantly generates:
 - 🧠 Educational facts  
@@ -10,14 +10,12 @@ Simply upload an image, and the app instantly generates:
 ---
 
 ## 🚀 Live Demo
-
-👉 [Try the App](kongosnap.vercel.app)
-
+https://kongosnap.vercel.app
 ---
 
 ## ✨ What It Does
 
-SnapQuiz bridges the gap between curiosity and learning.
+KongoSnap bridges the gap between curiosity and learning.
 
 Instead of just identifying objects like traditional tools, it transforms them into structured learning moments.
 
@@ -55,7 +53,7 @@ You can:
 
 > “Point → Discover → Learn → Test”
 
-SnapQuiz turns passive observation into active learning.
+KongoSnap turns passive observation into active learning.
 
 ---
 
